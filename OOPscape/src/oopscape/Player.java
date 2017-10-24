@@ -29,4 +29,8 @@ public class Player {
 		this.stopTime = System.currentTimeMillis();
 		this.timeTaken = this.stopTime-this.startTime + penalty;
 	}
+	
+	void writeToFile(){
+		//function to write user data to file
+	}
 }	
