@@ -2,11 +2,7 @@ package oopscape;
 
 public class CreateEnvironment {
 	Player player1;
-//	Room r1,r2,r3,r4,r5;
 	
-	void initializePlayer(){
-		
-	}
 /*
  * 	this class will determine the flow of the game 
 	and will contain the main display functions
