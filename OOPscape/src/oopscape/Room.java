@@ -10,10 +10,12 @@ public class Room implements RoomStruct {
 	String solutionToOpen = "";
 	Room connectsTo;
 	String name;
+	String color;
 
-	Room(String name,Room connectsTo, String walls[], String puzzle, boolean solved, String solutionToOpen,
+	Room(String name,Room connectsTo, String walls[], String puzzle, boolean solved,
+	 String solutionToOpen, String color,
 			int roomNo) {
-
+		this.color =  color;
 		this.name=name;
 		this.connectsTo = connectsTo;
 		this.walls = walls;
@@ -22,24 +24,24 @@ public class Room implements RoomStruct {
 		this.solved = false;
 		this.open = false;
 		this.roomNo = roomNo;
-	
+
 	}
 
 	@Override
 	public void displayRoom() {
-		
+		System.out.println
 	}
 
 	@Override
 	public void checkAns(String answer) {
-		
+
 
 	}
 
 //	@Override
 //	public void displayHints() {
-//		
-//		
+//
+//
 //	}
 
 }

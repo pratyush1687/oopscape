@@ -8,6 +8,7 @@ public class CreateEnvironment {
 	static Player player1;
 	static Room r1,r2,r3,r4,r5;
 	static MasterRoom mr;
+
 	/*
 	 * this class will determine the flow of the game and will contain the main
 	 * display functions
@@ -59,13 +60,111 @@ public class CreateEnvironment {
 		player1.StartGame();
 		Game gotogame=new Game(player1,r1,r2,r3,r4,r5,mr);
 
-
 	}
 
-	private static void createRoom() {
+	static void createRoom(){
+		createRoom1();
+		createRoom2();
+		createRoom3();
+		createRoom4();
+		createRoom5();
+		createMaster();
+	};
 
-		r1=new Room();
+	static void createRoom1(){
+		r1=new Room("Prince's Room",null,{"the world is chaotic but not me,
+		I follow instructions to the dot cause i am the Royal Prince
+		the son of Tipu sultan,I always start at THE CENTER OF THE WORLD",
+		"boolean number=command ,boolean number*=reverse(command)"
+		,"1.1 step right\n
+		2*.1 step down\n
+		3*.2 steps right\n
+		4.2 steps down\n
+		5*.1 step left",
+		"2 5 4\n
+	 	 1 3 8\n
+		 6 9 7"},
+		 "the Queen's room is locked and she only lets me enter,
+		 when i put the number of coins i collect ,but i demand order and put them in one line with spaces",
+		 false,
+		 "8 4 2 6 9",
+		 "grey",
+		 1);
+	}
 
+	static void createRoom2(){
+		r2=new Room("Princess' Room",null,{"I bubble I giggle with colors I mingle,
+		and balls i like to play with.",
+		"when i was 9 the king bought a red ball,\n
+		then i turned 10 he bought me a white one\n",
+		,"when i was 11 the king bought a blue ball,\n
+		then i turned 12 he bought me a yellow one\n",
+		"i finally have pink and a green ball but i could never figure out what VALUE are they to me"},
+		 "help the princess find the product of this puzzle",
+		 false,
+		 "11880",
+		 "pink",
+		 2);
+	}
+
+	static void createRoom3(){
+		r2=new Room("Queen' Room",null,{"The king loves his kingdom, and I love him for he brings
+		 these magestic deers which will one day fill this room to the brim, the pschyic says
+		 that from their horns i can predict when it was born and it is my final verdict",
+		"my first deer had 18 branches on the left horn and 11 on his right,the second had 16 on left and 14 on right",
+
+	   "my third deer had 17 branches on the left horn and 20 on his right,the fourth had 18 on left and 10 on right",
+	  "my fifth deer had 14 branches on the left horn and 16 on his right"},
+		 "can you help the queen arrange the lovely deers keep in mind that she prefers them young",
+		 false,
+		 "1 4 3 2 5",
+		 "red",
+		 2);
+	}
+	static void createRoom4(){
+		r2=new Room("Royal Kitchen",null,{"The royal family is fond of food.
+		Along with this they like praising their cutlery.",
+		"The spoons  are arranged in the cutlery stand but it seems they don't fit well.",
+	   "\\ \\ \n
+	   / / \n",
+	  "The king is very fond of arrangements and loves crosses. He is a clock-bound person who loves order."},
+		 "Can you help the cook find out the rotaions each spoon must make to make the king happy. The king prefers a zero at the end of every small conversation.",
+		 false,
+		 "0 1 0 1 0",
+		 "blue",
+		 4);
+	}
+
+	static void createRoom5(){
+		r2=new Room("Royal Meeting Room",null,{"",
+		"",
+	   "",
+	  ""},
+		 "The king is ferocious as to how did someone dare to enter the princess' room. He is a mai
+		 who respects courage and applauds smart men. He says that you can enter his room directly if you can go through the king's special
+		 memory test. He asks tell the color lengths of the rooms you entered in order."
+		 false,
+		 "4 4 3 4 0",
+		 "Silver",
+		 5);
+	}
+
+	static void createRoom6(){
+		r2=new Room("The King's Room",null,{"The only people who come here now how to fill up gaps.",
+		"The king is the person who dwells on PAST EXPERIENCES and so is respected by his poeple to fill up their needs.",
+	   "_ 4 2 6 9\n
+	   1 _ 8 8 0\n
+	   1 4 _ 2 5\n
+	   0 1 0 _ 0\n
+	   4 4 3 4 _\n",
+	  "The king is a forseer who always loves to start from the bottom and end at the top like a TRUE KING!"},
+		 "Having the king's gold sword is not as easy as solving a puzzle. This is a test of your speed and taste.
+		 The king has in his quarters a tiger to protect him. Can you give the tiger ENOUGH of his favourite food as soon as possible
+		 so that he doesn't attack you?"
+		 false,
+		 "0 1 3 1 8",
+		 "Gold",
+		 6);
 	}
 
 

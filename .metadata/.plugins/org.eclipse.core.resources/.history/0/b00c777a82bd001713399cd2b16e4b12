@@ -8,7 +8,7 @@ public class MasterRoom extends Room {
 			String color,int roomNo) {
 
 
-		super(name, connectsTo, walls, puzzle, solved, solutionToOpen,color,roomNo);
+		super(name, connectsTo, walls, puzzle, solved, solutionToOpen, String color,roomNo);
 
 
 	}
