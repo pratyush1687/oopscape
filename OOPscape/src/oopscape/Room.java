@@ -1,18 +1,20 @@
 package oopscape;
 
-public class Room {
+public class Room implements RoomStruct {
+
+	String walls[] = {};
+	String puzzle = "";
+	int roomNo = 0;
+	boolean open = false;
+	boolean solved = false;
+	String solutionToOpen = "";
 	Room connectsTo;
-	String walls[];
-	String puzzle;
-	int roomNo;
-	int puzzleNo;
-	boolean open;
-	boolean solved;
-	String solutionToOpen;
-	
-	Room(Room connectsTo,String walls[],String puzzle,
-			int puzzleNo,boolean solved,String solutionToOpen,int roomNo){
-		
+	String name;
+
+	Room(String name,Room connectsTo, String walls[], String puzzle, boolean solved, String solutionToOpen,
+			int roomNo) {
+
+		this.name=name;
 		this.connectsTo = connectsTo;
 		this.walls = walls;
 		this.puzzle = puzzle;
@@ -20,18 +22,24 @@ public class Room {
 		this.solved = false;
 		this.open = false;
 		this.roomNo = roomNo;
-		this.puzzleNo = puzzleNo;
-	}
 	
-	void displayRoom(){
-//		print the contents of the room if room == open;
+	}
+
+	@Override
+	public void displayRoom() {
 		
-//		else give an error		
 	}
-	
-	void inputAnswer(String answer){
-		if(answer == this.solutionToOpen){
-			this.solved = true;
-		}
+
+	@Override
+	public void checkAns(String answer) {
+		
+
 	}
+
+//	@Override
+//	public void displayHints() {
+//		
+//		
+//	}
+
 }
