@@ -7,8 +7,4 @@ public interface RoomStruct {
 	
 	boolean checkAns();
 	
-    //void displayHints();
-    
-    
-	
 }

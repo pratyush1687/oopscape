@@ -12,7 +12,6 @@ public class Room implements RoomStruct {
 	boolean open = false;
 	boolean solved = false;
 	String solutionToOpen = "";
-//	Room connectsTo;
 	String name;
 	String color;
 
@@ -40,17 +39,29 @@ public class Room implements RoomStruct {
 		System.out.println("hello! you're in the "+this.name);
 		ch=this.sc.nextLine();
 		System.out.println("the walls are painted "+this.color);
-
+		String walls1[]={walls[0],walls[1]};
+		String walls2[]={walls[3],walls[2]};
 		ch=this.sc.nextLine();
-		System.out.println("\nwall 1:");
-		System.out.println(walls[0]+'\n');
-		System.out.println("wall 2:");
-		System.out.println(walls[1]+'\n');
-		System.out.println("wall 3:");
-		System.out.println(walls[2]+'\n');
-		System.out.println("wall 4:");
-		System.out.println(walls[3]+'\n');
 
+		MultiThreading t1=new MultiThreading(walls[0],"wall 3:\n");
+		t1.start();
+
+		MultiThreading t2=new MultiThreading(walls[1],"wall 1:\n");
+		t2.start();
+
+		MultiThreading t4=new MultiThreading(walls[2],"wall 2:\n");
+		t4.start();
+
+		MultiThreading t3=new MultiThreading(walls[3],"wall 4:\n");
+		t3.start();
+//		System.out.println("\nwall 1:");
+//		System.out.println(walls[0]+'\n');
+//		System.out.println("wall 2:");
+//		System.out.println(walls[1]+'\n');
+//		System.out.println("wall 3:");
+//		System.out.println(walls[2]+'\n');
+//		System.out.println("wall 4:");
+//		System.out.println(walls[3]+'\n');
 		ch=this.sc.nextLine();
 		System.out.println("\n\n"+this.puzzle);
 		

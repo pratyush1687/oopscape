@@ -1,0 +1,14 @@
+package oopscape;
+
+public class MultiThreading implements Runnable{
+
+	MultiThreading(){
+		
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

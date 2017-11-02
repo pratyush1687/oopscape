@@ -1,0 +1,31 @@
+package oopscape;
+
+public class MultiThreading implements Runnable{
+	private Thread t;
+	private String arr[];
+	private int index;
+	MultiThreading(String arr[],int index){
+		this.arr=arr;
+		this.index=index;
+	}
+	@Override
+	public void run() {
+		try{
+			for(int i=1;i>=0;i--){
+				System.out.println("wall "+i+index);
+				System.out.println(arr[i]);
+				Thread.sleep(100);
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	public void start(){
+		if(t==null){
+			t= new Thread(this,"thread1");
+			t.start();
+		}
+	}
+
+}
