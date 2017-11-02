@@ -1,7 +1,8 @@
 package oopscape;
 import java.lang.*;
+import java.io.*;
 
-public class Player {
+public class Player implements Serializable{
 	String playerName;
 	long startTime;
 	long stopTime;
@@ -9,6 +10,7 @@ public class Player {
 	long penalty;
 	int age;
 	int currentRoom;
+	int score=0;
 
 	Player(String playerName,int age){
 		this.playerName = playerName;
@@ -25,12 +27,20 @@ public class Player {
 		this.penalty+=penalty;
 	}
 
-	void StopGame(){
+	void stopGame(){
 		this.stopTime = System.currentTimeMillis();
 		this.timeTaken = this.stopTime-this.startTime + penalty;
+		System.out.println(this.timeTaken);
 	}
 
 	void writeToFile(){
 		//function to write user data to file
+		
+	}
+
+	public void welcome() {
+		// TODO Auto-generated method stub
+		System.out.println("Welcome "+this.playerName+" you have been here for "+this.age+" years"
+				+ "\nand now its time that you serve your country");
 	}
 }

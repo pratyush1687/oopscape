@@ -1,0 +1,172 @@
+package oopscape;
+
+import java.util.Scanner;
+
+public class CreateEnvironment {
+
+	static Scanner in = new Scanner(System.in);
+	static Player player1;
+	static Room r1,r2,r3,r4,r5;
+	static MasterRoom mr;
+
+	/*
+	 * this class will determine the flow of the game and will contain the main
+	 * display functions
+	 *
+	 * for a basic flow of the game :
+	 *
+	 * ----- open connection ______ or | have to pass through a lock to open
+	 *
+	 * open connections will only work if the room has been opened if a room is
+	 * closed and you try to access it via open connection you'll be sent back
+	 *
+	 *
+	 * room 1 -------------------------------------- room 2 | | | | lock lock |
+	 * | | | room3-------open only if both rooms open------room4 | | | lock | |
+	 * | room5 | | | lock | | Master Room
+	 */
+
+	// TODO: formulate and divide puzzles
+	// TODO: make a design for displaying layout and rooms
+
+	private static void initializePlayer() {
+
+		System.out.println("Enter your name :");
+		String name = in.nextLine();
+		System.out.println("Enter your age");
+		int age = in.nextInt();
+
+		player1 = new Player(name, age);
+
+	}
+
+	public static void main(String[] args) {
+
+		char ch;
+
+		createRoom();
+		System.out.println(
+				"Welcome to the King's palace. This is the year 1867. You are now landing in the rein of Tipu Sultan, the King.\n"
+						+ " The Great Queen Victoria has assiged you a mission.\n"
+						+ "Your mission if you chose to accept it is to enter the highly secure palace of Tipu Sultan"
+						+ "and steal his GREAT GOLD SWORD\n");
+		System.out.println("Do you wish to play? (y/n) : ");
+		ch = in.next().charAt(0);
+
+		if (ch == 'n' || ch == 'N')
+			System.exit(0);
+//		r1.displayRoom();
+		initializePlayer();
+		player1.StartGame();
+		
+		Game gotogame=new Game(player1,r1,r2,r3,r4,r5,mr);
+
+	}
+
+	static void createRoom(){
+		createRoom1();
+		createRoom2();
+		createRoom3();
+		createRoom4();
+		createRoom5();
+		createMaster();
+	};
+
+	static void createRoom1(){
+		String walls[]={"the world is chaotic but not me,"
+				+ "I follow instructions to the dot cause i am the Royal Prince"
+				+ "\nthe son of Tipu sultan,I always start at THE CENTER OF THE WORLD",
+		"boolean number=command ,boolean number*=reverse(command)"
+		,"1.1 step right\n"
+		+ "2*.1 step down\n"
+		+ "3*.2 steps right\n"
+		+ "4.2 steps down\n"
+		+ "5*.1 step left",
+		"2 5 4\n"
+		+ "1 3 8\n"
+		+ "6 9 7"};
+		r1=new Room("Prince's Room",walls,
+		 "the Queen's room is locked and she only lets me enter,"
+		 + "when i put the number of coins i collect ,but i demand order and put them in one line with spaces",
+		 false,
+		 "8 4 2 6 9",
+		 "grey",
+		 1);
+	}
+
+	static void createRoom2(){
+		String walls[]={"I bubble I giggle with colors I mingle"+ "				and balls i like to play with.",
+				"when i was 9 the king bought a red ball,\n"
+				+ "				then i turned 10 he bought me a white one\n",
+	"when i was 11 the king bought a blue ball,\n"
+	+ "			then i turned 12 he bought me a yellow one\n",
+				"i finally have pink and a green ball but i could never figure out what VALUE are they to me"};
+		r2=new Room("Princess' Room",walls,
+		 "help the princess find the product of this puzzle",
+		 false,
+		 "11880",
+		 "pink",
+		 2);
+	}
+
+	static void createRoom3(){
+		String walls[]={"The king loves his kingdom, and I love him for he brings"
+				+ "these magestic deers which will one day fill this room to the brim, the pschyic says"
+				+ " that from their horns i can predict when it was born and it is my final verdict",
+				"my first deer had 18 branches on the left horn and 11 on his right,the second had 16 on left and 14 on right",
+			   "my third deer had 17 branches on the left horn and 20 on his right,the fourth had 18 on left and 10 on right",
+			  "my fifth deer had 14 branches on the left horn and 16 on his right"};
+		r2=new Room("Queen' Room",walls,
+		 "can you help the queen arrange the lovely deers keep in mind that she prefers them young",
+		 false,
+		 "1 4 3 2 5",
+		 "red",
+		 2);
+	}
+	static void createRoom4(){
+		String walls[]={"The royal family is fond of food."
+				+ "				Along with this they like praising their cutlery.",
+				"The spoons  are arranged in the cutlery stand but it seems they don't fit well.",
+			   "\\ \\ \n / / \n",
+			  "The king is very fond of arrangements and loves crosses. He is a clock-bound person who loves order."};
+		r2=new Room("Royal Kitchen",walls,
+		 "Can you help the cook find out the rotaions each spoon must make to make the king happy. The king prefers a zero at the end of every small conversation.",
+		 false,
+		 "0 1 0 1 0",
+		 "blue",
+		 4);
+	}
+
+	static void createRoom5(){
+		String walls[]={};
+		r2=new Room("Royal Meeting Room",walls,
+		 "The king is ferocious as to how did someone dare to enter the princess' room. He is a mai"
+		 + "		 who respects courage and applauds smart men. He says that you can enter his room directly if you can go through the king's special"
+		 + "memory test. He asks tell the color lengths of the rooms you entered in order.",
+		 false,
+		 "4 4 3 4 0",
+		 "Silver",
+		 5);
+	}
+
+	static void createMaster(){
+		String walls[]={"The only people who come here now how to fill up gaps.",
+				"The king is the person who dwells on PAST EXPERIENCES and so is respected by his poeple to fill up their needs.",
+				   "_ 4 2 6 9\n"
+				   + " 1 _ 8 8 0\n"
+				   + " 1 4 _ 2 5\n"
+				   + "0 1 0 _ 0\n"
+				   + "				   4 4 3 4 _\n",
+				  "The king is a forseer who always loves to start from the bottom and end at the top like a TRUE KING!"};
+		r2=new Room("The King's Room",walls,
+		 "Having the king's gold sword is not as easy as solving a puzzle. This is a test of your speed and taste."
+		 + "		 The king has in his quarters a tiger to protect him. Can you give the tiger ENOUGH of his favourite food as soon as possible"
+		 + "		 so that he doesn't attack you?",
+		 false,
+		 "0 1 3 1 8",
+		 "Gold",
+		 6);
+	}
+
+
+}

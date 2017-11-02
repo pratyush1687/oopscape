@@ -1,0 +1,27 @@
+package oopscape;
+
+public class Game {
+
+	Player player1;
+	
+    Room r1,r2,r3,r4,r5,mr;
+	
+	Game(Player player1,Room r1, Room r2, Room r3, Room r4, Room r5, MasterRoom mr) {
+		this.player1 = player1;
+		this.r1=r1;
+		this.r2=r2;
+		this.r3=r3;
+		this.r4=r4;
+		this.r5=r5;
+		this.mr=mr;
+	}
+
+	static void clscr(){
+		System.out.print("\033[H\033[2J");  
+	    System.out.flush();
+	}
+	public static void main(String[] args) {
+         this.player1.stopTime();
+	}
+
+}
